@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
+import { Pelicula } from '../interfaces/pelicula';
+import { PeliculaItemComponent } from '../components/pelicula-item/pelicula-item.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, PeliculaItemComponent, CommonModule],
 })
 export class HomePage {
 

@@ -1,0 +1,17 @@
+
+<ion-card>
+  <ion-item>
+    <ion-checkbox
+      slot="start"
+      [checked]="pelicula.alquilada">
+    </ion-checkbox>
+
+    <ion-label [class.tachado]="pelicula.alquilada">
+      {{ pelicula.titulo }}
+    </ion-label>
+
+    <ion-button (click)="mostrarDetalles()" slot="end">
+      Ver
+    </ion-button>
+  </ion-item>
+</ion-card>
