@@ -1,6 +1,6 @@
 <!-- La cabecera principal, visible en la parte superior de la pantalla -->
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Lista de Peliculas
     </ion-title>
@@ -15,19 +15,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- Directiva *ngIf: este div solo existirá en el DOM si la condición es verdadera -->
-  <div *ngIf="listaDePeliculas.length === 0" class="mensaje-vacio">
-    <p>¡Enhorabuena!</p>
-    <p>No tienes Peliculas pendientes.</p>
-  </div>
+<ion-grid>
+  <ion-row>
+    <!-- 
+      - Por cada 'pelicula' en 'listaDePeliculas', crea una columna (<ion-col>).
+      - En móvil (xs), cada columna ocupa 6/12 (mitad de pantalla -> 2 columnas por fila).
+      - En tablets (md), cada columna ocupa 4/12 (un tercio -> 3 columnas por fila).
+      - En escritorio (lg), cada columna ocupa 3/12 (un cuarto -> 4 columnas por fila).
+    -->
+    <ion-col *ngFor="let pelicula of listaDePeliculas" size="6" size-md="4" size-lg="3">
+      <!-- Dentro de cada columna, renderizamos nuestro componente de pelicula -->
+      <app-pelicula-item [pelicula]="pelicula" ></app-pelicula-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
-  <!-- 
-    Directiva *ngFor: este es el bucle. 
-    - Por cada objeto 'tarea' que haya en el array 'listaDeTareas'...
-    - ...Angular creará una instancia de nuestro componente <app-task-item>.
-  -->
-  <app-pelicula-item
-    *ngFor="let pelicula of listaDePeliculas"
-    [pelicula]="pelicula"> <!-- Property Binding: le pasamos el objeto 'tarea' actual al @Input del componente hijo -->
-  </app-pelicula-item>
 </ion-content>

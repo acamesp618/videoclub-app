@@ -5,4 +5,5 @@ export interface Pelicula {
     año: number;
     genero: string;
     alquilada: boolean;
+    imagen?: string;
 }

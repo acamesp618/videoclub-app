@@ -1,2 +1,68 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+:root {
+    /* Color Principal (Header / Navbar) - Azul Marino Oscuro */
+    --ion-color-primary: #1e293b;
+    --ion-color-primary-rgb: 30, 41, 59;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #1a2434;
+    --ion-color-primary-tint: #343e4f;
+
+    /* Color Secundario (Tarjetas / Elementos seleccionados) - Ámbar / Dorado Cálido */
+    --ion-color-secondary: #f59e0b;
+    --ion-color-secondary-rgb: 245, 158, 11;
+    --ion-color-secondary-contrast: #1e293b;
+    --ion-color-secondary-contrast-rgb: 30, 41, 59;
+    --ion-color-secondary-shade: #d88b0a;
+    --ion-color-secondary-tint: #f6a823;
+
+    /* Color Terciario (Tarjetas inactivas / Fondos neutros) - Gris Cálido Suave */
+    --ion-color-tertiary: #f1f5f9;
+    --ion-color-tertiary-rgb: 241, 245, 249;
+    --ion-color-tertiary-contrast: #334155;
+    --ion-color-tertiary-contrast-rgb: 51, 65, 85;
+    --ion-color-tertiary-shade: #d4d8db;
+    --ion-color-tertiary-tint: #f2f6fa;
+
+    /* Fondo de la aplicación */
+    --ion-background-color: #f8fafc;
+    --ion-background-color-rgb: 248, 250, 252;
+
+    /* Texto base */
+    --ion-text-color: #0f172a;
+    --ion-text-color-rgb: 15, 23, 42;
+
+    /* Color de éxito / Confirmación (Verde) */
+    --ion-color-success: #10b981;
+    --ion-color-success-rgb: 16, 185, 129;
+    --ion-color-success-contrast: #ffffff;
+    --ion-color-success-contrast-rgb: 255, 255, 255;
+    --ion-color-success-shade: #0ea5e9;
+    --ion-color-success-tint: #34d399;
+
+    // Si queremos tachar el titulo cuando esté alquilado
+    /*ion-label.tachado {
+        text-decoration: line-through;
+        color: #64748b;
+    }*/
+
+    /* Estilos añadidos al final para la tarjeta y el fondo */
+    ion-card {
+        --background: #ffffff;
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+
+        ion-item {
+            --background: transparent;
+        }
+
+        /* Cuando la película pasa a estar alquilada */
+        &.alquilada {
+            --background: #ecfdf5;
+            /* Fondo verde suave */
+            border: 1px solid var(--ion-color-success);
+        }
+
+    }
+}

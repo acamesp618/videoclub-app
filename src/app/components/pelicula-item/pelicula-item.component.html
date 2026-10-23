@@ -1,7 +1,15 @@
 
-<ion-card>
+<ion-card [class.alquilada]="pelicula.alquilada">
+
+  <!-- Imagen de la película -->
+  <img
+    [src]="pelicula.imagen || 'https://via.placeholder.com/300x450?text=Cine'"
+    [alt]="pelicula.titulo"
+    class="portada-pelicula" />
+
   <ion-item>
     <ion-checkbox
+      color="success"
       slot="start"
       [checked]="pelicula.alquilada">
     </ion-checkbox>
@@ -10,8 +18,5 @@
       {{ pelicula.titulo }}
     </ion-label>
 
-    <ion-button (click)="mostrarDetalles()" slot="end">
-      Ver
-    </ion-button>
   </ion-item>
 </ion-card>

@@ -1,0 +1,22 @@
+ion-card {
+  --background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  .portada-pelicula {
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Proporción estandar de poster de cine */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    display: block;
+  }
+
+  ion-item {
+    --background: transparent;
+  }
+
+  &.alquilada {
+    --background: #ecfdf5;
+    border: 1px solid var(--ion-color-success);
+  }
+}
