@@ -13,7 +13,7 @@ import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/angular';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [RouterLink, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButtons, IonIcon, CommonModule, PeliculaItemComponent],
+  imports: [RouterLink, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButtons, IonIcon, CommonModule, PeliculaItemComponent, IonButton],
 })
 export class HomePage {
 
