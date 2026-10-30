@@ -1,5 +1,8 @@
+import { RouterLink } from '@angular/router';
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonInput, IonButtons, IonIcon } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { settingsOutline } from 'ionicons/icons';
 import { Pelicula } from '../interfaces/pelicula';
 import { PeliculaItemComponent } from '../components/pelicula-item/pelicula-item.component';
 import { CommonModule } from '@angular/common';
@@ -10,7 +13,7 @@ import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/angular';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButton, CommonModule, PeliculaItemComponent],
+  imports: [RouterLink, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButtons, IonIcon, CommonModule, PeliculaItemComponent],
 })
 export class HomePage {
 
@@ -126,5 +129,8 @@ export class HomePage {
     { id: 99, titulo: "Los Vengadores", director: "Joss Whedon", año: 2012, genero: "Acción", alquilada: true },
     { id: 100, titulo: "Star Wars: Una nueva esperanza", director: "George Lucas", año: 1977, genero: "Ciencia ficción", alquilada: false }*/
 ];
-  constructor() {}
+  constructor() {
+    // Registramos el icono de ajustes que vamos a usar en la vista
+    addIcons({ settingsOutline });
+  }
 }

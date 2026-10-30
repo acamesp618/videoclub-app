@@ -10,4 +10,12 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'ajustes',
+    loadComponent: () => import('./pages/ajustes/ajustes.page').then( m => m.AjustesPage)
+  },
+  {
+    path: 'ajustes',
+    loadComponent: () => import('./pages/ajustes/ajustes.page').then( m => m.AjustesPage)
+  },
 ];

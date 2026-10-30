@@ -1,5 +1,6 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+
 :root {
     /* Color Principal (Header / Navbar) - Azul Marino Oscuro */
     --ion-color-primary: #1e293b;
@@ -41,13 +42,7 @@
     --ion-color-success-shade: #0ea5e9;
     --ion-color-success-tint: #34d399;
 
-    // Si queremos tachar el titulo cuando esté alquilado
-    /*ion-label.tachado {
-        text-decoration: line-through;
-        color: #64748b;
-    }*/
-
-    /* Estilos añadidos al final para la tarjeta y el fondo */
+    /* Estilos añadidos para la tarjeta y el fondo */
     ion-card {
         --background: #ffffff;
         border-radius: 8px;
@@ -60,9 +55,43 @@
         /* Cuando la película pasa a estar alquilada */
         &.alquilada {
             --background: #ecfdf5;
-            /* Fondo verde suave */
             border: 1px solid var(--ion-color-success);
         }
+    }
+}
 
+/*  CONFIGURACIÓN MODO OSCURO (Se activa al añadir la clase .dark al <html> o <body>) */
+.dark, body.dark {
+    --ion-background-color: #0f172a;
+    --ion-background-color-rgb: 15, 23, 42;
+
+    --ion-text-color: #f8fafc;
+    --ion-text-color-rgb: 248, 250, 252;
+
+    --ion-color-primary: #0f172a;
+    --ion-color-primary-rgb: 15, 23, 42;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #0d1425;
+    --ion-color-primary-tint: #272e3f;
+
+    --ion-color-step-50: #1e293b;
+    --ion-color-step-100: #334155;
+    --ion-color-step-150: #475569;
+    --ion-color-step-200: #64748b;
+    --ion-color-step-250: #94a3b8;
+
+    --ion-item-background: #1e293b;
+    --ion-toolbar-background: #1e293b;
+    --ion-tab-bar-background: #1e293b;
+
+    ion-card {
+        --background: #1e293b;
+        color: #f8fafc;
+
+        &.alquilada {
+            --background: #064e3b;
+            border: 1px solid var(--ion-color-success);
+        }
     }
 }

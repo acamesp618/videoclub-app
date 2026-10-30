@@ -4,6 +4,14 @@
     <ion-title>
       Lista de Peliculas
     </ion-title>
+
+    <!-- El contenedor de botones debe ir fuera de ion-title -->
+    <ion-buttons slot="end">
+      <ion-button routerLink="/ajustes">
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
@@ -15,19 +23,20 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-grid>
-  <ion-row>
-    <!-- 
+  <ion-grid>
+    <ion-row>
+      <!-- 
       - Por cada 'pelicula' en 'listaDePeliculas', crea una columna (<ion-col>).
       - En móvil (xs), cada columna ocupa 6/12 (mitad de pantalla -> 2 columnas por fila).
       - En tablets (md), cada columna ocupa 4/12 (un tercio -> 3 columnas por fila).
       - En escritorio (lg), cada columna ocupa 3/12 (un cuarto -> 4 columnas por fila).
     -->
-    <ion-col *ngFor="let pelicula of listaDePeliculas" size="6" size-md="4" size-lg="3">
-      <!-- Dentro de cada columna, renderizamos nuestro componente de pelicula -->
-      <app-pelicula-item [pelicula]="pelicula" ></app-pelicula-item>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+      <ion-col *ngFor="let pelicula of listaDePeliculas" size="6" size-md="4"
+        size-lg="3">
+        <!-- Dentro de cada columna, renderizamos nuestro componente de pelicula -->
+        <app-pelicula-item [pelicula]="pelicula"></app-pelicula-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
