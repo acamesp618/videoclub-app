@@ -2,6 +2,9 @@
 // https://ionicframework.com/docs/theming/
 
 :root {
+    /* Tipografía personalida para toda la app */
+    --ion-font-family: 'Poppins', sans-serif;
+    
     /* Color Principal (Header / Navbar) - Azul Marino Oscuro */
     --ion-color-primary: #1e293b;
     --ion-color-primary-rgb: 30, 41, 59;
