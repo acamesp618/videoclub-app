@@ -20,7 +20,11 @@
   <ion-list>
     <ion-list-header>Apariencia</ion-list-header>
     <ion-item>
+      <!-- Icono a la izquierda de la opcion -->
+       <ion-icon slot="start" name="moon-outline"></ion-icon>
+
       <ion-label>Modo Oscuro</ion-label>
+      
       <!-- Enlazamos la propiedad checked con el servicio y capturamos el evento ionChange -->
       <ion-toggle [checked]="settingsService.isDarkMode()" (ionChange)="onToggleChange($event)"></ion-toggle>
     </ion-item>

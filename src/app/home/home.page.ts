@@ -7,6 +7,7 @@ import { Pelicula } from '../interfaces/pelicula';
 import { PeliculaItemComponent } from '../components/pelicula-item/pelicula-item.component';
 import { CommonModule } from '@angular/common';
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/angular';
+import { filmOutline } from 'ionicons/icons';
 
 
 @Component({
@@ -131,6 +132,6 @@ export class HomePage {
 ];
   constructor() {
     // Registramos el icono de ajustes que vamos a usar en la vista
-    addIcons({ settingsOutline });
+    addIcons({ settingsOutline, filmOutline });
   }
 }

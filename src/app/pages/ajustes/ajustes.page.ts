@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonListHeader, IonTitle, IonToolbar } from '@ionic/angular';
+import { IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonListHeader, IonTitle, IonToolbar, IonIcon } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { moonOutline, sunnyOutline } from 'ionicons/icons';
 import { IonToggle } from "@ionic/angular";
 import { Settings } from '../../services/settings';
 import { IonBackButton } from "@ionic/angular";
@@ -11,13 +13,15 @@ import { IonBackButton } from "@ionic/angular";
   templateUrl: './ajustes.page.html',
   styleUrls: ['./ajustes.page.scss'],
   standalone: true,
-  imports: [IonBackButton, IonToggle, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonListHeader, IonItem, IonLabel, IonButtons ]
+  imports: [IonBackButton, IonToggle, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonListHeader, IonItem, IonLabel, IonButtons, IonIcon ]
 })
 export class AjustesPage implements OnInit {
 
   // Al declarar el parámetro como 'public', Angular nos permite acceder a 
   // 'settingsService' directamente desde el archivo HTML (plantilla).
-  constructor(public settingsService: Settings) { }
+  constructor(public settingsService: Settings) {
+    addIcons({moonOutline, sunnyOutline});
+   }
 
   // Método que se ejecuta cada vez que el usuario mueve el interruptor (ion-toggle)
   onToggleChange(event: any) {
