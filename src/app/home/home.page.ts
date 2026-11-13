@@ -1,20 +1,26 @@
 import { RouterLink } from '@angular/router';
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonInput, IonButtons, IonIcon } from '@ionic/angular';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonInput, IonButtons, IonIcon, IonCard, IonSelect, IonSelectOption, IonCheckbox } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { settingsOutline } from 'ionicons/icons';
 import { Pelicula } from '../interfaces/pelicula';
 import { PeliculaItemComponent } from '../components/pelicula-item/pelicula-item.component';
 import { CommonModule } from '@angular/common';
-import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/angular';
+import {
+  IonGrid, IonRow, IonCol, IonButton
+} from '@ionic/angular';
 import { filmOutline } from 'ionicons/icons';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [RouterLink, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonButtons, IonIcon, CommonModule, PeliculaItemComponent, IonButton],
+  imports: [IonCard, RouterLink, IonHeader, IonToolbar, IonTitle, IonContent,
+    IonGrid, IonRow, IonCol, IonButtons, IonIcon, CommonModule,
+    PeliculaItemComponent, IonButton, FormsModule, IonList, IonItem,
+    IonInput, IonSelect, IonSelectOption, IonCheckbox],
 })
 export class HomePage {
 
@@ -31,7 +37,7 @@ export class HomePage {
     { id: 10, titulo: "Harry Potter y la Cámara Secreta", director: "Chris Columbus", año: 2002, genero: "Fantasía", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/3nvGqfZE3yrsqehpF107byUdUSq.jpg" },
 
     { id: 11, titulo: "Harry Potter y el Prisionero de Azkaban", director: "Alfonso Cuarón", año: 2004, genero: "Fantasía", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/oabaGVDN9pqLzMT6w5qMGdFawH5.jpg" },
-    { id: 12, titulo: "Harry Potter y el Cáliz de Fuego", director: "Mike Newell", año: 2005, genero: "Fantasía", alquilada: true, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/5hrrncgY7GfRHz6JmnhPlvJUONe.jpg"},
+    { id: 12, titulo: "Harry Potter y el Cáliz de Fuego", director: "Mike Newell", año: 2005, genero: "Fantasía", alquilada: true, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/5hrrncgY7GfRHz6JmnhPlvJUONe.jpg" },
     { id: 13, titulo: "Harry Potter y la Orden del Fénix", director: "David Yates", año: 2007, genero: "Fantasía", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/vYUjcTKDXOHJOlilNK953m8zJww.jpg" },
     { id: 14, titulo: "Harry Potter y el Misterio del Príncipe", director: "David Yates", año: 2009, genero: "Fantasía", alquilada: true, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/tO0UGkNuQoxyXve0mvwtXP49NAO.jpg" },
     { id: 15, titulo: "Harry Potter y las Reliquias de la Muerte", director: "David Yates", año: 2010, genero: "Fantasía", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/w6wsYKdXERaXRdByPsI2O9rn20b.jpg" },
@@ -45,7 +51,7 @@ export class HomePage {
     { id: 22, titulo: "Spider-Man 2", director: "Sam Raimi", año: 2004, genero: "Acción", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/bf0KrQZceXP7jQNUxfpMxSGVf5E.jpg" },
     { id: 23, titulo: "Spider-Man: No Way Home", director: "Jon Watts", año: 2021, genero: "Acción", alquilada: true, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/accAPImdjUwgNgocDNWXCGFEcvL.jpg" },
     { id: 24, titulo: "Batman Begins", director: "Christopher Nolan", año: 2005, genero: "Acción", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/6yMWU1vWkOBbNRIwOxhetd2aHhO.jpg" },
-    { id: 25, titulo: "The Dark Knight", director: "Christopher Nolan", año: 2008, genero: "Acción", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/8QDQExnfNFOtabLDKqfDQuHDsIg.jpg"},
+    { id: 25, titulo: "The Dark Knight", director: "Christopher Nolan", año: 2008, genero: "Acción", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/8QDQExnfNFOtabLDKqfDQuHDsIg.jpg" },
     { id: 26, titulo: "Joker", director: "Todd Phillips", año: 2019, genero: "Drama", alquilada: true, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/v0eQLbzT6sWelfApuYsEkYpzufl.jpg" },
     { id: 27, titulo: "Gladiator", director: "Ridley Scott", año: 2000, genero: "Acción", alquilada: false, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/90QFOG5zSN4cbrIVs4DL4ePAuA5.jpg" },
     { id: 28, titulo: "Troya", director: "Wolfgang Petersen", año: 2004, genero: "Acción", alquilada: true, imagen: "https://www.themoviedb.org/t/p/w600_and_h900_face/mBiDQT28DnuYaJSL4nDD43ORE6p.jpg" },
@@ -129,7 +135,50 @@ export class HomePage {
     { id: 98, titulo: "Crepúsculo", director: "Catherine Hardwicke", año: 2008, genero: "Romance", alquilada: false },
     { id: 99, titulo: "Los Vengadores", director: "Joss Whedon", año: 2012, genero: "Acción", alquilada: true },
     { id: 100, titulo: "Star Wars: Una nueva esperanza", director: "George Lucas", año: 1977, genero: "Ciencia ficción", alquilada: false }*/
-];
+  ];
+
+  // Objeto modelo para enlazar con el formulario
+  nuevaPelicula: Omit<Pelicula, 'año'> & { anio: number | null } = {
+    id: 0,
+    titulo: '',
+    director: '',
+    anio: null,
+    genero: '',
+    alquilada: false,
+    imagen: ''
+  };
+
+  agregarPelicula() {
+    // Exigimos que el usuario haya rellenado título, año y género
+    if (!this.nuevaPelicula.titulo.trim() || !this.nuevaPelicula.anio || !this.nuevaPelicula.genero) {
+      return;
+    }
+
+    const peliculaACrear: Pelicula = {
+      id: Date.now(),
+      titulo: this.nuevaPelicula.titulo.trim(),
+      director: this.nuevaPelicula.director.trim() || 'Desconocido',
+      año: Number(this.nuevaPelicula.anio),
+      genero: this.nuevaPelicula.genero,
+      alquilada: this.nuevaPelicula.alquilada,
+      imagen: this.nuevaPelicula.imagen?.trim() || 'https://placehold.co/600x900/1e293b/f59e0b?text=Sin+Portada'
+    };
+
+    // Insertamos la nueva película al principio del catálogo
+    this.listaDePeliculas.unshift(peliculaACrear);
+
+    // Vaciamos todo el formulario de nuevo tras guardar
+    this.nuevaPelicula = {
+      id: 0,
+      titulo: '',
+      director: '',
+      anio: null,
+      genero: '',
+      alquilada: false,
+      imagen: ''
+    };
+  }
+
   constructor() {
     // Registramos el icono de ajustes que vamos a usar en la vista
     addIcons({ settingsOutline, filmOutline });

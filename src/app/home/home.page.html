@@ -2,9 +2,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
-      <img src="assets/img/logo.png" alt="Logo" style="height: 70px; vertical-align: middle; margin-right: 8px;">
+      <img src="assets/img/logo.png" alt="Logo"
+        style="height: 70px; vertical-align: middle; margin-right: 8px;">
       Lista de Peliculas
-      <ion-icon name="film-outline" style="vertical-align: middle; margin-right: 8px;"></ion-icon>
+      <ion-icon name="film-outline"
+        style="vertical-align: middle; margin-right: 8px;"></ion-icon>
     </ion-title>
 
     <!-- El contenedor de botones debe ir fuera de ion-title -->
@@ -23,12 +25,96 @@
     <ion-toolbar>
       <ion-title size="large">
         <!-- Subimos height a 48px en la cabecera grande -->
-        <img src="assets/logo.png" alt="Logo" style="height: 48px; vertical-align: middle; margin-right: 10px;">
+        <img src="assets/logo.png" alt="Logo"
+          style="height: 48px; vertical-align: middle; margin-right: 10px;">
         Lista de Peliculas
-        <ion-icon name="film-outline" style="vertical-align: middle; margin-right: 8px;"></ion-icon>
+        <ion-icon name="film-outline"
+          style="vertical-align: middle; margin-right: 8px;"></ion-icon>
       </ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list class="ion-margin">
+    <ion-item>
+      <ion-input
+        label="Título *"
+        labelPlacement="floating"
+        placeholder="Ej: Regreso al Futuro"
+        [(ngModel)]="nuevaPelicula.titulo">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Director"
+        labelPlacement="floating"
+        placeholder="Ej: Robert Zemeckis"
+        [(ngModel)]="nuevaPelicula.director">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Año *"
+        labelPlacement="floating"
+        type="number"
+        placeholder="Ej: 1985"
+        [(ngModel)]="nuevaPelicula.anio">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+        label="Género *"
+        labelPlacement="floating"
+        placeholder="Selecciona uno o varios"
+        [multiple]="true"
+        [(ngModel)]="nuevaPelicula.genero">
+        <ion-select-option value="Acción">Acción</ion-select-option>
+        <ion-select-option value="Animación">Animación</ion-select-option>
+        <ion-select-option value="Aventura">Aventura</ion-select-option>
+        <ion-select-option value="Bélica">Bélica</ion-select-option>
+        <ion-select-option value="Ciencia ficción">Ciencia
+          ficción</ion-select-option>
+        <ion-select-option value="Comedia">Comedia</ion-select-option>
+        <ion-select-option value="Crimen">Crimen</ion-select-option>
+        <ion-select-option value="Drama">Drama</ion-select-option>
+        <ion-select-option value="Fantasía">Fantasía</ion-select-option>
+        <ion-select-option value="Musical">Musical</ion-select-option>
+        <ion-select-option value="Romance">Romance</ion-select-option>
+        <ion-select-option value="Terror">Terror</ion-select-option>
+        <ion-select-option value="Thriller">Thriller</ion-select-option>
+        <ion-select-option value="Western">Western</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="URL de la imagen (opcional)"
+        labelPlacement="floating"
+        type="url"
+        placeholder="https://..."
+        [(ngModel)]="nuevaPelicula.imagen">
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-checkbox
+        justify="start"
+        labelPlacement="end"
+        [(ngModel)]="nuevaPelicula.alquilada">
+        Marcar como alquilada
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-button
+    expand="block"
+    (click)="agregarPelicula()"
+    [disabled]="!nuevaPelicula.titulo.trim() || !nuevaPelicula.anio || !nuevaPelicula.genero"
+    class="ion-margin">
+    Añadir Película
+  </ion-button>
 
   <ion-grid>
     <ion-row>
@@ -42,7 +128,7 @@
         size-lg="3">
         <!-- Dentro de cada columna, renderizamos nuestro componente de pelicula -->
         <app-pelicula-item [pelicula]="pelicula"></app-pelicula-item>
-        
+
       </ion-col>
     </ion-row>
   </ion-grid>
